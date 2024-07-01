@@ -5,6 +5,9 @@ sudo mount --rbind /dev @base/dev
 sudo chroot @base /bin/bash
   # apt install waydroid
 
+# sudo btrfs subvolume delete current/subvolum
+# sudo mv @base current/subvolum
+
 # reboot
 
 sh <(curl -L https://nixos.org/nix/install) --daemon
