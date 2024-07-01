@@ -1,0 +1,20 @@
+sudo mount -t proc proc @base/proc
+sudo mount --rbind /sys @base/sys
+sudo mount --rbind /dev @base/dev
+
+sudo chroot @base /bin/bash
+  # apt install waydroid
+
+# reboot
+
+sh <(curl -L https://nixos.org/nix/install) --daemon
+
+
+guest$ nix-shell -p home-manager
+          rm -rf ~/.* 
+          rm -rf ~/* 
+          rm /etc/systemd/system/nix-daemon.s*
+          sudo cp -a -r 04-diff/* /
+          home-manager switch
+          sudo btrfs subvolume snapshot -r / base
+          sudo /swap.sh

@@ -1,0 +1,10 @@
+[Unit]
+Description=Links a new snapshot as root
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/swap.sh
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,12 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# UUID=94a02f18-34ac-41e8-9d71-591f262764c6
+/dev/mmcblk1p2      	/         	btrfs     	relatime,ssd,subvol=/debian/@d	0 0
+/dev/mmcblk1p2      	/home/jj  	btrfs     	rw,relatime,ssd,subvol=/debian/@home	0 1
+/dev/mmcblk1p2      	/nix      	btrfs     	rw,relatime,ssd,subvol=/debian/@nix	0 1
+/dev/mmcblk1p2      	/var/lib/waydroid      	btrfs     	rw,relatime,ssd,subvol=/debian/@var-lib-waydroid	0 1

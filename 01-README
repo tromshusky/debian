@@ -1,0 +1,5 @@
+chroot @base /usr/sbin/adduser guest
+chroot @base /usr/sbin/adduser jj
+chroot @base /usr/sbin/usermod -aG sudo guest
+chroot @base /usr/sbin/usermod -aG sudo jj
+chroot @base /bin/passwd -d guest
